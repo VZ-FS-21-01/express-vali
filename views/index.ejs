@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <% if(err) { %>
+        <%# JSON.stringify(err) %>
+            <% err.errors.forEach(ele=> {%>
+                <p>
+                    There was a Problem with
+                    <%= ele.param %>, <%= ele.msg %>
+                </p>
+                <%})%>
+                    <%} %>
+                        <form action="/add" method="post">
+                            <input type="text" name="user">
+                            <input type="email" name="mail">
+                            <input type="submit" value="Senden">
+                        </form>
+</body>
+
+</html>
